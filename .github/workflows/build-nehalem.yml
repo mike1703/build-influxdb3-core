@@ -27,7 +27,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       REGISTRY: ghcr.io
-      IMAGE_NAME: wuan/influxdb3-core-nehalem
+      IMAGE_NAME: mike1703/influxdb3-core-nehalem
     permissions:
       contents: read
       packages: write
