@@ -1,4 +1,4 @@
-name: Build for Nehalem
+name: Build for Skylake
 
 on:
   workflow_dispatch:
@@ -7,13 +7,13 @@ on:
     tags:
       - 'v*'
     paths:
-      - .github/workflows/build-nehalem.yml
-      - ../../influxdb-nehalem.patch
+      - .github/workflows/build-skylake.yml
+      - ../../influxdb-skylake.patch
   pull_request:
     branches: [ "main" ]
     paths:
-      - .github/workflows/build-nehalem.yml
-      - ../../influxdb-nehalem.patch
+      - .github/workflows/build-skylake.yml
+      - ../../influxdb-skylake.patch
 
 permissions:
   contents: write
@@ -27,7 +27,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       REGISTRY: ghcr.io
-      IMAGE_NAME: mike1703/influxdb3-core-nehalem
+      IMAGE_NAME: mike1703/influxdb3-core-skylake
     permissions:
       contents: read
       packages: write
@@ -52,7 +52,7 @@ jobs:
 
       - name: Apply patch
         working-directory: influxdb
-        run: "git apply ../influxdb-nehalem.patch"
+        run: "git apply ../influxdb-skylake.patch"
 
       - name: Check apply patch
         working-directory: influxdb
