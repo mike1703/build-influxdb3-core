@@ -7,8 +7,7 @@ index a16ed45ce8..8a0e9f5be9 100644
      "-C", "link-arg=-Wl,--no-rosegment",
      # Enable all features supported by CPUs more recent than haswell (2013)
 -    "-C", "target-cpu=haswell",
-+    "-C", "target-cpu=skylake",
-+    "-C", "target-feature=-avx,-avx2",
++    "-C", "target-cpu=skylake", "-C", "target-feature=-avx,-avx2",
      # Enable framepointers because profiling and debugging is a nightmare w/o it and it is generally not considered a performance advantage on modern x86_64 CPUs.
      "-C", "force-frame-pointers=yes",
  ]
